@@ -1,17 +1,6 @@
-#LDT
-##Lightweight Decoratorable Textarea
-###Javascript Live Syntax Highlighting
+#Lightweight Decorator Textarea
+###In browser live syntax highlighting
 LDT aims to provide a simple, lightweight, and highly extensible alternative to existing in-browser live syntax highlighting solutions by leveraging clever CSS and native functionality.
-
-##Browser Support
-LDT has been tested on
-
- * Firefox 3.6, 9, 10
- * Internet Explorer 8
- * Chromium 16
- * Midori 4.1
- * Opera 11.61
- * Epiphany
 
 ##Using LDT
 Turning a regular `textarea` into an auto highlighting `ldtextarea` is easy.
@@ -37,6 +26,16 @@ var codeArea = new LDTextarea( $('codeArea'), parser );
 }
 </pre>
 
+##Browser Support
+LDT has been tested on
+
+ * Firefox 3.6, 9, 10
+ * Internet Explorer 8
+ * Chromium 16
+ * Midori 4.1
+ * Opera 11.61
+ * Epiphany
+
 ##API
 ###LDTextarea
 
@@ -54,5 +53,4 @@ var codeArea = new LDTextarea( $('codeArea'), parser );
  + `parser.identify( string )` Finds the CSS class name associated with the token `string`.
 
 ##License
-LDT is open sourced under GPL v3 and MIT.
-Full text for both licenses should be available in this directory.
+LDT is open sourced under GPL v3 and MIT. Full text for both licenses should be available in this directory.
