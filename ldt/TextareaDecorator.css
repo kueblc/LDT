@@ -1,0 +1,53 @@
+/* TextareaDecorator.css
+ * written by Colin Kuebler 2012
+ * Part of LDT, dual licensed under GPLv3 and MIT
+ * Provides styles for rendering a textarea on top of a pre with scrollbars
+ */
+
+.ldt {
+	overflow: auto;
+	height: 340px;
+	position: relative;
+}
+
+.ldt pre, .ldt textarea {
+	font-size: 16px !important;
+	font-family: monospace !important;
+}
+
+.ldt pre {
+	display: inline;
+	-moz-padding-start: 1px;
+	padding-right: 2em;
+	color: black;
+}
+
+.ldt label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: inline;
+	padding: 4px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	cursor: text;
+}
+
+.ldt textarea {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: 0;
+	outline: none;
+	resize: none;
+	min-width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	/*opacity: 0.2;*/
+	filter: alpha(opacity = 20);
+	color: transparent !important;
+	color: rgba(0,0,0,.2) !important;
+}
