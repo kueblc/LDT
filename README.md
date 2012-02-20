@@ -28,9 +28,9 @@ Making an auto highlighting `textarea` is easy with LDT. Make sure to include th
 // create a parser with a mapping of css classes to regular expressions
 // everything must be matched, so 'whitespace' and 'other' are commonly included
 var parser = new Parser(
-  { whitespace: /^(\s+)/,
-    comment: /^(\/\/[^\r\n]*)/,
-    other: /^(\S+)/ } );
+  { whitespace: /\s+/,
+    comment: /\/\/[^\r\n]*/,
+    other: /\S+/ } );
 // get the textarea with $ (document.getElementById)
 // pass the textarea element and parser to LDT
 var ldt = new TextareaDecorator( $('codeArea'), parser );
