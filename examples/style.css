@@ -1,0 +1,33 @@
+/* demo stylesheet, makes a full page .input */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	padding: .5em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.input {
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid #aaa;
+	box-shadow: 0 4px 8px #eee inset;
+	-moz-box-shadow: 0 4px 8px #eee inset;
+	-webkit-box-shadow: 0 4px 8px #eee inset;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}

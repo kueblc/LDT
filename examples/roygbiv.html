@@ -3,38 +3,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 		<title>LDT ROYGBIV Demo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<link rel="stylesheet" type="text/css" href="../lib/TextareaDecorator.css">
 		<style>
-			/* full page */
-			* {
-				margin: 0;
-				padding: 0;
-			}
-			html, body {
-				width: 100%;
-				height: 100%;
-			}
-			body {
-				padding: 1em;
-				box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-			}
-			/* textarea style */
-			.input {
-				width: 100%;
-				height: 100%;
-				box-sizing: border-box;
-				-moz-box-sizing: border-box;
-				-webkit-box-sizing: border-box;
-				border: 1px solid #aaa;
-				box-shadow: 0 4px 8px #eee inset;
-				-moz-box-shadow: 0 4px 8px #eee inset;
-				-webkit-box-shadow: 0 4px 8px #eee inset;
-				border-radius: 4px;
-				-moz-border-radius: 4px;
-				-webkit-border-radius: 4px;
-			}
 			/* highlight styles */
 			.ldt .red { color: red; }
 			.ldt .orange { color: orange; }
@@ -49,17 +20,17 @@
 		<script type="text/javascript">
 			// get element shortcut
 			function $(e){ return document.getElementById(e); };
-			// create the parser
+			// create the parser, case insensitive
 			var parser = new Parser({
-				whitespace: /^(\s+)/,
-				red: /^red/,
-				orange: /^orange/,
-				yellow: /^yellow/,
-				green: /^green/,
-				blue: /^blue/,
-				indigo: /^indigo/,
-				violet: /^violet/,
-				other: /^(\S+)/ });
+				whitespace: /\s+/,
+				red: /red/,
+				orange: /orange/,
+				yellow: /yellow/,
+				green: /green/,
+				blue: /blue/,
+				indigo: /indigo/,
+				violet: /violet/,
+				other: /\S+/ }, true );
 			// wait for the page to finish loading before accessing the DOM
 			window.onload = function(){
 				// get the textarea
