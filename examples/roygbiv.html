@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<title>LDT Live Syntax Highlighting Demo</title>
+		<title>LDT ROYGBIV Demo</title>
 		<link rel="stylesheet" type="text/css" href="../lib/TextareaDecorator.css">
 		<style>
 			/* full page */
@@ -36,9 +36,13 @@
 				-webkit-border-radius: 4px;
 			}
 			/* highlight styles */
-			.ldt .comment {
-				color: silver;
-			}
+			.ldt .red { color: red; }
+			.ldt .orange { color: orange; }
+			.ldt .yellow { color: yellow; }
+			.ldt .green { color: green; }
+			.ldt .blue { color: blue; }
+			.ldt .indigo { color: indigo; }
+			.ldt .violet { color: violet; }
 		</style>
 		<script src="../lib/Parser.js" type="text/javascript"></script>
 		<script src="../lib/TextareaDecorator.js" type="text/javascript"></script>
@@ -48,7 +52,13 @@
 			// create the parser
 			var parser = new Parser({
 				whitespace: /^(\s+)/,
-				comment: /^(\/\/[^\r\n]*)/,
+				red: /^red/,
+				orange: /^orange/,
+				yellow: /^yellow/,
+				green: /^green/,
+				blue: /^blue/,
+				indigo: /^indigo/,
+				violet: /^violet/,
 				other: /^(\S+)/ });
 			// wait for the page to finish loading before accessing the DOM
 			window.onload = function(){
@@ -60,6 +70,6 @@
 		</script>
 	</head>
 	<body>
-		<textarea id='codeArea' class='input'></textarea>
+		<textarea id='codeArea' class='input'>red orange yellow green blue indigo violet</textarea>
 	</body>
 </html>
