@@ -70,7 +70,7 @@ LDT has been tested on
 ###Parser
 
  + `new Parser( [rules], [i] )` Creates a parser. `rules` is an object whose keys are CSS classes and values are the regular expressions which match each token. `i` is a boolean which determines if the matching is case insensitive, it defaults to `false`.
- + `.rules` Stores the parsing rules, a mapping of CSS class names to regular expressions.
+ + `.add( rules )` Adds a mapping of CSS class names to regular expressions.
  + `.tokenize( string )` Splits `string` into an array of tokens as defined by `.rules`.
  + `.identify( string )` Finds the CSS class name associated with the token `string`.
 
