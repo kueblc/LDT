@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<title>LDT Live Syntax Highlighting Demo</title>
+		<link rel="stylesheet" type="text/css" href="../lib/TextareaDecorator.css">
+		<style>
+			/* textarea style */
+			.input {
+				width: 400px;
+				height: 300px;
+				border: 1px solid #aaa;
+				box-shadow: 0 4px 8px #eee inset;
+				-moz-box-shadow: 0 4px 8px #eee inset;
+				-webkit-box-shadow: 0 4px 8px #eee inset;
+				border-radius: 4px;
+				-moz-border-radius: 4px;
+				-webkit-border-radius: 4px;
+			}
+			/* highlight styles */
+			.ldt .comment {
+				color: silver;
+			}
+		</style>
+		<script src="../lib/Parser.js" type="text/javascript"></script>
+		<script src="../lib/TextareaDecorator.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			// get element shortcut
+			var $ = function(e){ return document.getElementById(e); };
+			var parser, textarea, ldt;
+			window.onload = function(){
+				// create the parser
+				parser = new Parser({
+					whitespace: /^(\s+)/,
+					comment: /^(\/\/[^\r\n]*)/,
+					other: /^(\S+)/ });
+				// get the textarea
+				textarea = $('codeArea');
+				// start the decorator
+				ldt = new TextareaDecorator( textarea, parser );
+			};
+		</script>
+	</head>
+	<body>
+		<textarea id='codeArea' class='input'></textarea>
+	</body>
+</html>

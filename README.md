@@ -44,7 +44,7 @@ var ldt = new TextareaDecorator( $('codeArea'), parser );
 	border: 1px solid black;
 }
 /* styles applied to comment tokens */
-.ldt > .comment {
+.ldt .comment {
     color: silver;
 }
 </pre>

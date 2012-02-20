@@ -8,6 +8,7 @@
 	overflow: auto;
 	height: 340px;
 	position: relative;
+	padding: 4px;
 }
 
 .ldt pre, .ldt textarea {
