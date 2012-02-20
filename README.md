@@ -11,12 +11,12 @@ In a sense, LDT takes the unix approach; make small programs that do one thing r
 
 The optional Parser is included to make it easy to generate fast highlightings using regular expressions. All you have to do is provide a mapping of CSS class names to RegExp objects. In your CSS you can specify styles to apply to each token class. You can also apply multiple classes to a token, just provide a space separated list in quotes. You can also write your own parser if you have your own way of generating tokens, just follow the parser interface.
 
-LDT was developed by Colin Kuebler originally for use in The Koala Project. Special thanks to the *Rensselaer Center for Open Source* for their support.
+LDT was developed by Colin Kuebler originally as part of *The Koala Project*. Special thanks to the *Rensselaer Center for Open Source* for their support.
 
-* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own history stack.
+\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own history stack.
 
 ##Using LDT
-Making an auto highlighting `&lt;textarea&gt;` is easy with LDT. Make sure to include the modules either directly in your code (less server requests) or using the HTML `&lt;script&gt;` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
+Making an auto highlighting `textarea` is easy with LDT. Make sure to include the modules either directly in your code (less server requests) or using the HTML `script` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
 ###HTML
 <pre>
 &lt;!-- normal textarea fallback, add an id to access it from javascript --&gt;
