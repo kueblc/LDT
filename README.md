@@ -19,8 +19,8 @@ LDT was developed by Colin Kuebler originally as part of *The Koala Project*. Sp
 Making an auto highlighting `textarea` is easy with LDT. Make sure to include the modules you need either directly in your code (less server requests) or using the HTML `script` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
 ###HTML
 <pre>
-&lt;!-- normal textarea fall-back, add an id to access it from JavaScript --&gt;
-&lt;textarea id='codeArea'&gt;&lt;/textarea&gt;
+&lt;!-- normal textarea fall-back, add an id to access it from javascript --&gt;
+&lt;textarea id='codeArea' class='ldt'&gt;&lt;/textarea&gt;
 &lt;noscript&gt;Please enable JavaScript to allow syntax highlighting.&lt;/noscript&gt;
 </pre>
 ###JS
