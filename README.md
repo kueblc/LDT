@@ -13,7 +13,7 @@ The optional Parser is included to make it easy to generate fast highlightings u
 
 LDT was developed by Colin Kuebler originally as part of *The Koala Project*. Special thanks to the *Rensselaer Center for Open Source* for their support.
 
-<sub>\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own history stack.</sub>
+*\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own undo stack.*
 
 ##Using LDT
 Making an auto highlighting `textarea` is easy with LDT. Make sure to include the modules you need either directly in your code (less server requests) or using the HTML `script` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
@@ -85,6 +85,9 @@ This is a singleton, you do not need to instantiate this object.
 
  + `.add( element )` Adds SelectHelper methods to `element`.
  + `element.insertAtCursor( string )` Inserts `string` into the `element` before the current cursor position.
+
+##Contributing
+You can help by testing browser compatibility, submitting bug reports and fixes, and providing any sort of feedback. Thank you for supporting open source software!
 
 ##License
 LDT is open sourced under GPL v3 and MIT. Full text for both licenses should be available in this directory.
