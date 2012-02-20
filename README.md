@@ -13,7 +13,7 @@ The optional Parser is included to make it easy to generate fast highlightings u
 
 LDT was developed by Colin Kuebler originally as part of *The Koala Project*. Special thanks to the *Rensselaer Center for Open Source* for their support.
 
-\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own history stack.
+<sub>\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own history stack.</sub>
 
 ##Using LDT
 Making an auto highlighting `textarea` is easy with LDT. Make sure to include the modules either directly in your code (less server requests) or using the HTML `script` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
@@ -33,7 +33,7 @@ var parser = new Parser(
     other: /^(\S+)/ } );
 // get the textarea with $ (document.getElementById)
 // pass the textarea element and parser to LDT
-var codeArea = new LDTextarea( $('codeArea'), parser );
+var ldt = new TextareaDecorator( $('codeArea'), parser );
 </pre>
 ###CSS
 <pre>
@@ -43,7 +43,7 @@ var codeArea = new LDTextarea( $('codeArea'), parser );
 	height: 300px;
 	border: 1px solid black;
 }
-/* css rule applied to comment tokens */
+/* styles applied to comment tokens */
 .ldt > .comment {
     color: silver;
 }
@@ -60,20 +60,31 @@ LDT has been tested on
  * Epiphany
 
 ##API
-###LDTextarea
+###TextareaDecorator
 
- + `new LDTextarea( textarea, parser )` Converts a HTML `textarea` element into an auto highlighting LDTextarea. `parser` is used to determine how to subdivide and style the content. `parser` can be any object which defines the `tokenize` and `identify` methods as described in the Parser API below.
- + `ldt.textarea` The input element of the LDT.
- + `ldt.output` Direct access to the output layer of the LDT. It is an array of HTML nodes. Do *not* remove the last element.
- + `ldt.highlight()` Updates the highlighting of the LDT. It is automatically called on user input. You shouldn't need to call this unless you programmatically changed the contents of `ldt.textarea`.
- + `ldt.insertAtCursor( string )` Inserts `string` into the `ldt.textarea` before the current cursor position.
+ + `new TextareaDecorator( textarea, parser )` Converts a HTML `textarea` element into an auto highlighting TextareaDecorator. `parser` is used to determine how to subdivide and style the content. `parser` can be any object which defines the `tokenize` and `identify` methods as described in the Parser API below.
+ + `.input` The `textarea` element of the LDT.
+ + `.output` Direct access to the output layer of the LDT. It is an array of HTML nodes. Do *not* remove the last element as the update algorithm depends on it.
+ + `.update()` Updates the highlighting of the LDT. It is automatically called on user input. You shouldn't need to call this unless you programmatically changed the contents of the `textarea`.
 
 ###Parser
 
  + `new Parser( [rules] )` Creates a parser. `rules` is an object whose keys are CSS classes and values are the regular expressions which match each token.
- + `parser.rules` Stores the parsing rules, a mapping of CSS class names to regular expressions.
- + `parser.tokenize( string )` Splits `string` into an array of tokens as defined by `parser.rules`.
- + `parser.identify( string )` Finds the CSS class name associated with the token `string`.
+ + `.rules` Stores the parsing rules, a mapping of CSS class names to regular expressions.
+ + `.tokenize( string )` Splits `string` into an array of tokens as defined by `.rules`.
+ + `.identify( string )` Finds the CSS class name associated with the token `string`.
+
+###Keybinder
+This is a singleton, you do not need to instantiate this object.
+
+ + `.bind( element, [keymap] )` Adds Keybinder methods to `element`, optionally setting the element's `keymap`.
+ + `element.keymap` A mapping of key names to callbacks.
+
+###SelectHelper
+This is a singleton, you do not need to instantiate this object.
+
+ + `.add( element )` Adds SelectHelper methods to `element`.
+ + `element.insertAtCursor( string )` Inserts `string` into the `element` before the current cursor position.
 
 ##License
 LDT is open sourced under GPL v3 and MIT. Full text for both licenses should be available in this directory.
