@@ -7,7 +7,7 @@
 
 var parser = new Parser({
 	whitespace: /\s+/,
-	comment: /\/\*.*?\*\/|\/\/.*?\n|\#.*?\n/,
+	comment: /\/\*.*?\*\/|\/\/[^\r\n]*|\#[^\r\n]*/,
 	string: /"(\\.|[^"])*"?|'(\\.|[^'])*'?/,
 	number: /-?(\d+\.?\d*|\.\d+)|0x[\dA-Fa-f]+/,
 	keyword: /(and|or|xor|for|do|while|foreach|as|return|die|exit|if|then|else|elseif|new|delete|try|throw|catch|finally|class|function|resource|var|global|const|static|public|private|protected|published|extends|switch|true|false|null|void|this|self|struct|def)(?!\w|=)/,
