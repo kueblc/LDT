@@ -63,8 +63,8 @@ LDT has been tested on
 ###TextareaDecorator
 
  + `new TextareaDecorator( textarea, parser )` Converts a HTML `textarea` element into an auto highlighting TextareaDecorator. `parser` is used to determine how to subdivide and style the content. `parser` can be any object which defines the `tokenize` and `identify` methods as described in the Parser API below.
- + `.input` The `textarea` element of the LDT.
- + `.output` Direct access to the output layer of the LDT. It is an array of HTML nodes. Do *not* remove the last element as the update algorithm depends on it.
+ + `.input` The input layer of the LDT, a `textarea` element.
+ + `.output` The output layer of the LDT, a `pre` element.
  + `.update()` Updates the highlighting of the LDT. It is automatically called on user input. You shouldn't need to call this unless you programmatically changed the contents of the `textarea`.
 
 ###Parser
