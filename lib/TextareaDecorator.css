@@ -17,6 +17,7 @@
 
 .ldt pre {
 	display: inline;
+	display: inline-block;
 	-moz-padding-start: 1px;
 	margin-right: 2em;
 	color: black;
