@@ -8,9 +8,10 @@
 		<style>
 			/* highlight styles */
 			.ldt .comment { color: silver; }
-			.ldt .string { color: green; font-style: italic; }
+			.ldt .string { color: green; }
 			.ldt .number { color: navy; }
-			.ldt .keyword { font-weight: bold; }
+			/* setting inline-block and margin to avoid misalignment bug in windows */
+			.ldt .keyword { font-weight: bold; display: inline-block; margin-bottom: -1px; }
 			.ldt .variable { color: cyan; }
 			.ldt .define { color: blue; }
 		</style>
@@ -24,9 +25,9 @@
 				whitespace: /\s+/,
 				comment: /\/\*([^\*]|\*[^\/])*(\*\/?)?|(\/\/|#)[^\r\n]*/,
 				string: /"(\\.|[^"\r\n])*"?|'(\\.|[^'\r\n])*'?/,
-				number: /-?(\d+\.?\d*|\.\d+)|0x[\dA-Fa-f]+/,
+				number: /0x[\dA-Fa-f]+|-?(\d+\.?\d*|\.\d+)/,
 				keyword: /(and|as|case|catch|class|const|def|delete|die|do|else|elseif|esac|exit|extends|false|fi|finally|for|foreach|function|global|if|new|null|or|private|protected|public|published|resource|return|self|static|struct|switch|then|this|throw|true|try|var|void|while|xor)(?!\w|=)/,
-				variable: /(\$|\%|\@)(\->|\w)+(?!\w)|\${\w*}?/,
+				variable: /[\$\%\@](\->|\w)+(?!\w)|\${\w*}?/,
 				define: /[$A-Z_a-z0-9]+/,
 				op: /[\+\-\*\/=<>!]=?|[\(\)\{\}\[\]\.\|]/,
 				other: /\S+/,
