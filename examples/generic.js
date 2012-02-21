@@ -13,7 +13,7 @@ var parser = new Parser({
 	keyword: /(and|as|case|catch|class|const|def|delete|die|do|else|elseif|esac|exit|extends|false|fi|finally|for|foreach|function|global|if|new|null|or|private|protected|public|published|resource|return|self|static|struct|switch|then|this|throw|true|try|var|void|while|xor)(?!\w|=)/,
 	variable: /(\$|\%|\@)(\->|\w)+(?!\w)|\${\w*}?/,
 	define: /[$A-Z_a-z0-9]+/,
-	op: /(\+|-|\*|\/|=|<|>)=?|(!=|\(|\)|\{|\}|\[|\]|\.)/,
+	op: /(\+|-|\*|\/|=|<|>|!)=?|(\(|\)|\{|\}|\[|\]|\.)/,
 	other: /\S+/,
 });
 
