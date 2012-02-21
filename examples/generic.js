@@ -7,11 +7,11 @@
 
 var parser = new Parser({
 	whitespace: /\s+/,
-	comment: /\/\*([^\*]|\*[^\/])*(\*\/?)?|\/\/[^\r\n]*|\#[^\r\n]*/,
+	comment: /\/\*([^\*]|\*[^\/])*(\*\/?)?|(\/\/|#)[^\r\n]*/,
 	string: /"(\\.|[^"])*"?|'(\\.|[^'])*'?/,
 	number: /-?(\d+\.?\d*|\.\d+)|0x[\dA-Fa-f]+/,
-	keyword: /(and|or|xor|for|do|while|foreach|as|return|die|exit|if|then|else|elseif|new|delete|try|throw|catch|finally|class|function|resource|var|global|const|static|public|private|protected|published|extends|switch|true|false|null|void|this|self|struct|def)(?!\w|=)/,
-	variable: /(\$|\%|\@)(\->|\w)+\b/,
+	keyword: /(and|as|case|catch|class|const|def|delete|die|do|else|elseif|esac|exit|extends|false|fi|finally|for|foreach|function|global|if|new|null|or|private|protected|public|published|resource|return|self|static|struct|switch|then|this|throw|true|try|var|void|while|xor)(?!\w|=)/,
+	variable: /(\$|\%|\@)(\->|\w)+(?!\w)|\${\w*}?/,
 	define: /[$A-Z_a-z0-9]+/,
 	op: /(\+|-|\*|\/|=|<|>)=?|(!=|\(|\)|\{|\}|\[|\]|\.)/,
 	other: /\S+/,
