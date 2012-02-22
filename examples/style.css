@@ -5,7 +5,7 @@
 	padding: 0;
 }
 
-html, body {
+html, body, .input {
 	width: 100%;
 	height: 100%;
 }
@@ -17,13 +17,12 @@ body {
 	-webkit-box-sizing: border-box;
 }
 
+/* pretty textarea */
 .input {
-	width: 100%;
-	height: 100%;
+	border: 1px solid #aaa;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	border: 1px solid #aaa;
 	box-shadow: 0 4px 8px #eee inset;
 	-moz-box-shadow: 0 4px 8px #eee inset;
 	-webkit-box-shadow: 0 4px 8px #eee inset;
