@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -37,13 +37,13 @@
 				// get the textarea
 				var textarea = $('codeArea');
 				// lets set it to something interesting
-				textarea.value = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">\n<html>\n\t' + document.documentElement.innerHTML + '\n</html>';
+				textarea.value = '<!DOCTYPE html>\n<html>\n\t' + document.documentElement.innerHTML + '\n</html>';
 				// start the decorator
 				decorator = new TextareaDecorator( textarea, parser );
 			};
 		</script>
 	</head>
 	<body>
-		<textarea id='codeArea' class='input'></textarea>
+		<textarea id='codeArea' class='input' spellcheck='false'></textarea>
 	</body>
 </html>
