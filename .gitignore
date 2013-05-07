@@ -1,0 +1,4 @@
+# vim and emacs' backups and temporaries
+*~
+.*.sw*
+\#*\#
