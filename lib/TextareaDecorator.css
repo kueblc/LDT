@@ -33,6 +33,7 @@
 
 .ldt pre {
 	-moz-padding-start: 1px;
+	margin: 0;
 }
 
 .ldt label {
