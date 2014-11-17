@@ -34,6 +34,7 @@
 .ldt pre {
 	-moz-padding-start: 1px;
 	margin: 0;
+	overflow: initial;
 }
 
 .ldt label {
