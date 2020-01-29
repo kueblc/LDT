@@ -1,9 +1,6 @@
 # Lightweight Decorator for Textareas
 ## In browser live syntax highlighting
 
-## NOTICE
-As of 2013, this project is no longer actively maintained. Will accept pull requests for minimal tweaks or bug fixes, as long as they fit within the scope of the project as a lightweight live syntax highlighting solution. As of 2018, everything should still be functional and usage of the technique on which this is based is now commonplace.
-
 LDT aims to provide a simple, lightweight, and highly extensible alternative to existing in-browser live syntax highlighting solutions by leveraging clever CSS and native functionality. Other solutions often re-implement large parts of the user interaction, or use inconsistent pseudo-standard features such as contentEditable and designMode. This results in either a lack of native functionality or a large code-base to compensate or both.
 
 It behaves (mostly) like a textarea because it *is* a (transparent) textarea! The decorator maintains a styled copy of the content in a display layer which is aligned underneath the real textarea. By using a real textarea, we get all the native functionality for free! This usually includes keyboard input (one would hope), navigating with a blinking cursor, making selections, cut, copy, & paste; sometimes drag & drop and undo & redo*.
