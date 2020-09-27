@@ -10,8 +10,7 @@
 			.ldt .comment { color: silver; }
 			.ldt .string { color: green; }
 			.ldt .number { color: navy; }
-			/* setting inline-block and margin to avoid misalignment bug in windows */
-			.ldt .keyword { font-weight: bold; display: inline-block; margin-bottom: -1px; }
+			.ldt .keyword { font-weight: bold; }
 			.ldt .variable { color: cyan; }
 			.ldt .define { color: blue; }
 		</style>
@@ -23,9 +22,9 @@
 			// generic syntax parser
 			var parser = new Parser({
 				whitespace: /\s+/,
+				number: /0x[\dA-Fa-f]+|-?(\d+\.?\d*|\.\d+)|#[\dA-Fa-f]{3,6}/,
 				comment: /\/\*([^\*]|\*[^\/])*(\*\/?)?|(\/\/|#)[^\r\n]*/,
 				string: /"(\\.|[^"\r\n])*"?|'(\\.|[^'\r\n])*'?/,
-				number: /0x[\dA-Fa-f]+|-?(\d+\.?\d*|\.\d+)/,
 				keyword: /(and|as|case|catch|class|const|def|delete|die|do|else|elseif|esac|exit|extends|false|fi|finally|for|foreach|function|global|if|new|null|or|private|protected|public|published|resource|return|self|static|struct|switch|then|this|throw|true|try|var|void|while|xor)(?!\w|=)/,
 				variable: /[\$\%\@](\->|\w)+(?!\w)|\${\w*}?/,
 				define: /[$A-Z_a-z0-9]+/,
