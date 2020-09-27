@@ -14,7 +14,6 @@
 	font-size: 16px !important;
 	/* resize algorithm depends on a monospaced font */
 	font-family: monospace !important;
-	color: black;
 }
 
 .ldt textarea {
@@ -58,7 +57,7 @@
 	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
-	/* IE doesn't support rgba texarea, so use vendor specific alpha filter */
+	/* IE doesn't support rgba textarea, so use vendor specific alpha filter */
 	filter: alpha(opacity = 20);
 }
 
