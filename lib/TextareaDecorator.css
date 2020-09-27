@@ -14,7 +14,6 @@
 	font-size: 16px !important;
 	/* resize algorithm depends on a monospaced font */
 	font-family: monospace !important;
-	color: black;
 }
 
 .ldt textarea {
