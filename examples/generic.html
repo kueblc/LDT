@@ -29,7 +29,7 @@
 				variable: /[\$\%\@](\->|\w)+(?!\w)|\${\w*}?/,
 				define: /[$A-Z_a-z0-9]+/,
 				op: /[\+\-\*\/=<>!]=?|[\(\)\{\}\[\]\.\|]/,
-				other: /\S+/,
+				other: /\S/,
 			});
 			// wait for the page to finish loading before accessing the DOM
 			window.onload = function(){

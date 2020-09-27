@@ -30,7 +30,7 @@ Making an auto highlighting `textarea` is easy with LDT. Make sure to include th
 var parser = new Parser(
   { whitespace: /\s+/,
     comment: /\/\/[^\r\n]*/,
-    other: /\S+/ } );
+    other: /\S/ } );
 // get the textarea with $ (document.getElementById)
 // pass the textarea element and parser to LDT
 var ldt = new TextareaDecorator( $('codeArea'), parser );
@@ -52,9 +52,9 @@ var ldt = new TextareaDecorator( $('codeArea'), parser );
 ## Browser Support
 LDT has been tested on
 
- * Firefox 3.6, 9, 10
- * Internet Explorer 8
- * Chromium 16
+ * Firefox 3.6 - 80
+ * Internet Explorer 8 - 11
+ * Chromium & Google Chrome 16 - 85
  * Midori 4.1
  * Opera 11.61
  * Epiphany
