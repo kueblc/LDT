@@ -11,6 +11,7 @@
 			.ldt .underline { text-decoration: underline; }
 			.ldt .italic { font-style: italic }
 			.ldt .strike { text-decoration: line-through; }
+			.ldt .wavy { text-decoration: underline red wavy; }
 			/* fix for bold/italic/non regular fonts on windows */
 			.ldt .fix { display: inline-block; margin-bottom: -1px; }
 		</style>
@@ -26,6 +27,7 @@
 				underline: /_[^_]*_?/,
 				"italic fix": /\/[^\/\r\n]*\/?/,
 				strike: /-[^-]*-?/,
+				wavy: /~[^~]*~?/,
 				other: /\S+/ });
 			// wait for the page to finish loading before accessing the DOM
 			window.onload = function(){
@@ -37,6 +39,6 @@
 		</script>
 	</head>
 	<body>
-		<textarea id='codeArea' class='input'>*bold* _underline_ /italic/ -strikethrough-</textarea>
+		<textarea id='codeArea' class='input'>*bold* _underline_ /italic/ -strikethrough- ~wavy~</textarea>
 	</body>
 </html>

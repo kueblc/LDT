@@ -13,18 +13,18 @@ The optional Parser is included to make it easy to generate fast highlightings u
 
 LDT was developed by Colin Kuebler originally as part of *The Koala Project*. Special thanks to the *Rensselaer Center for Open Source* for their support.
 
-<em>\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality with upcoming HTML5 undoManager or by implementing your own undo stack.</em>
+*\* Undo & redo has been known to break when you modify the textarea's contents programmatically (which is why LDT doesn't do this by default). It might be possible to regain this functionality by implementing your own undo stack.*
 
 ## Using LDT
 Making an auto highlighting `textarea` is easy with LDT. Make sure to include the modules you need either directly in your code (less server requests) or using the HTML `script` tag. Minify in production for bandwidths sake. Below is a simple example of LDT usage. See `examples` directory for more.
 ### HTML
-<pre>
-&lt;!-- normal textarea fall-back, add an id to access it from javascript --&gt;
-&lt;textarea id='codeArea' class='ldt'&gt;&lt;/textarea&gt;
-&lt;noscript&gt;Please enable JavaScript to allow syntax highlighting.&lt;/noscript&gt;
-</pre>
+```html
+<!-- normal textarea fall-back, add an id to access it from javascript -->
+<textarea id='codeArea' class='ldt'></textarea>
+<noscript>Please enable JavaScript to allow syntax highlighting.</noscript>
+```
 ### JS
-<pre>
+```js
 // create a parser with a mapping of css classes to regular expressions
 // everything must be matched, so 'whitespace' and 'other' are commonly included
 var parser = new Parser(
@@ -34,9 +34,9 @@ var parser = new Parser(
 // get the textarea with $ (document.getElementById)
 // pass the textarea element and parser to LDT
 var ldt = new TextareaDecorator( $('codeArea'), parser );
-</pre>
+```
 ### CSS
-<pre>
+```css
 /* editor styles */
 .ldt {
 	width: 400px;
@@ -47,7 +47,7 @@ var ldt = new TextareaDecorator( $('codeArea'), parser );
 .ldt .comment {
     color: silver;
 }
-</pre>
+```
 
 ## Browser Support
 LDT has been tested on
