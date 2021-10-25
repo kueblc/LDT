@@ -32,10 +32,6 @@
 .ldt pre {
 	margin: 0;
 	overflow: initial;
-	position: relative;
-	z-index: 2;
-	background: transparent;
-	pointer-events: none;
 }
 
 .ldt label {
