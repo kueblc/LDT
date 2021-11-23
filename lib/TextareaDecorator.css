@@ -18,7 +18,9 @@
 
 .ldt textarea {
 	/* hide the text but show the text caret */
-	color: transparent !important;
+	color: transparent;
+	/* Firefox caret position is slow to update when color is transparent */
+	color: rgba(0, 0, 0, 0.004);
 	caret-color: #000;
 }
 
