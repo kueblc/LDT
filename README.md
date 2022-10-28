@@ -90,4 +90,4 @@ This is a singleton, you do not need to instantiate this object.
 You can help by testing browser compatibility, submitting bug reports and fixes, and providing any sort of feedback. Optionally let me know if you end up using LDT, I would love to see what you do with it. Thank you for supporting open source software!
 
 ## License
-LDT is open sourced under GPL v3 and MIT. Full text for both licenses should be available in this directory.
+LDT is open sourced under your choice of GPL v3 or MIT. Full text for both licenses should be available in this directory.
